@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cake Maker</title>
+        
+        
+        <link rel="stylesheet" href="iui/iui.css" type="text/css" />
+        <link rel="stylesheet" href="iui/t/default/default-theme.css" type="text/css"/>
+        
+        <link rel="apple-touch-icon" href="images/iphone-icon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        
+        <style>
+        form {display:none;}
+        </style>
+    </head>
+    <body>
+        
+         <div class="toolbar">
+            <h1 id="pageTitle"></h1>
+            <a id="backButton" class="button" href="#"></a>
+         </div>
+        <div class="footer">asdasdasd</div> 
+        <div id="index" title="All Cakes" selected="true" class="panel">
+            <fieldset id="cakes"></fieldset>
+            <fieldset id="total"></fieldset>
+            <fieldset id="add_cake">
+                 <a class="grayButton add" href="#add">Add a cake</a>
+            </fieldset>
+       </div>
+       
+        <form id="add" title="Add Cake" selected="false" class="panel"></form>
+        <form id="edit" title="Edit Cake" selected="false" class="panel"></form>
+        
+        
+        <script type=text/tim class=total_cakes>
+            <p>Total eggs needed: {{ total }}</p>
+        </script>
+        
+        <script type=text/tim class=cake>
+            <h3>{{ width }}x{{ height }}</h3>
+        </script>
+        
+        <script type=text/tim class=cake>
+        <p>
+            Width: {{ width }}<br />
+            Height: {{ height }}<br />
+            Eggs needed: {{ eggs }}<br />
+            <a href="#edit" class="edit">Edit</a>
+        </p>        
+        </script>
+        
+        <script type=text/tim class=cake_edit>
+        <fieldset>
+            <div class="row"><label for="width">Tin Width</label><input type="text" name="width" value="{{ width }}"></div>
+            <div class="row"><label for="height">Tin Height</label><input type="text" name="height" value="{{ height }}"></div>
+        </fieldset>
+        <button class="grayButton save">Save</button>
+        </script>
+
+        <script src="js/libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/libs/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/libs/tim.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/libs/underscore.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/libs/backbone.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/libs/backbone-localstorage.js" type="text/javascript" charset="utf-8"></script>
+        <script type="application/x-javascript" src="iui/iui.js"></script>
+
+        <script src="js/quantities.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/cakes.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            cake = {
+                'width' : 8,
+                'height' : 5,
+                'eggs' : 8,
+            }
+            // $('body').append(tim('cake', cake))
+        </script>
+        
+        
+    </body>
+</html>
